@@ -5,7 +5,6 @@ import org.junit.Test;
 
 /**
  * CalculadoraTest class
- * @author Agustin Mascheroni
  *
  */
 public class CalculadoraTest {
@@ -23,6 +22,16 @@ public class CalculadoraTest {
 		int b = 5;
 		int c = 3;
 		int resultado = 10;
+		int obtenido = calculadora.sumar(a, b, c);
+		Assert.assertEquals(resultado, obtenido);
+	}
+	
+	@Test
+	public void sumanegativosTest() {
+		int a = -2;
+		int b = -5;
+		int c = -3;
+		int resultado = -10;
 		int obtenido = calculadora.sumar(a, b, c);
 		Assert.assertEquals(resultado, obtenido);
 	}
@@ -52,5 +61,14 @@ public class CalculadoraTest {
 		int obtenido = calculadora.multiplicar(a, b);
 		Assert.assertEquals(resultado, obtenido);
 	}
-
+	@Test
+	public void multiplicacionCEROTest() {
+		int a = 0;
+		int b = 0;
+		int resultado = 0;
+		int obtenido = calculadora.multiplicar(a, b);
+		Assert.assertEquals(resultado, obtenido);
+	}
+	
+	
 }
